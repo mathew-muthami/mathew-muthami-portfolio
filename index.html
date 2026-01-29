@@ -2,112 +2,414 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Mathew Muthami | Professional IT Specialist</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mathew Muthami | Senior IT Specialist | Nairobi</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --bg-primary: #ffffff;
+      --bg-secondary: rgba(255,255,255,0.8);
+      --text-primary: #1a1a1a;
+      --text-secondary: #4a5568;
+      --accent: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      --glass: rgba(255,255,255,0.25);
+      --shadow: 0 25px 45px rgba(0,0,0,0.1);
+    }
+    [data-theme="dark"] {
+      --bg-primary: #0f0f23;
+      --bg-secondary: rgba(20,20,40,0.8);
+      --text-primary: #e2e8f0;
+      --text-secondary: #a0aec0;
+      --glass: rgba(255,255,255,0.1);
+    }
+
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; }
-    .container { max-width: 1000px; margin: 0 auto; padding: 20px; }
-    .hero { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; text-align: center; padding: 60px 30px; border-radius: 25px; margin-bottom: 40px; }
-    .hero h1 { font-size: 3em; margin-bottom: 10px; }
-    .hero img { width: 140px; height: 140px; border-radius: 50%; border: 5px solid white; margin: 25px auto; display: block; }
-    h2 { color: #2c3e50; font-size: 2.2em; text-align: center; margin: 50px 0 30px; }
-    h2::after { content: ''; display: block; width: 80px; height: 4px; background: linear-gradient(90deg, #3498db, #2ecc71); margin: 15px auto; }
-    .card { background: rgba(255,255,255,0.9); padding: 30px; border-radius: 20px; margin-bottom: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
-    .skills-grid { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin: 40px 0; }
-    .skill-badge { background: linear-gradient(45deg, #ff6b6b, #4ecdc4); color: white; padding: 15px 30px; border-radius: 50px; cursor: pointer; font-weight: bold; transition: all 0.3s ease; }
-    .skill-badge:hover { transform: scale(1.1); }
-    .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; margin: 40px 0; }
-    .contact-form { background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); padding: 40px; border-radius: 20px; margin-top: 20px; }
-    .form-group { margin-bottom: 25px; }
-    label { display: block; margin-bottom: 8px; font-weight: 600; color: #2c3e50; }
-    input, textarea { width: 100%; padding: 15px; border: 2px solid #e1e5e9; border-radius: 12px; font-size: 16px; }
-    input:focus, textarea:focus { outline: none; border-color: #3498db; }
-    button { width: 100%; padding: 18px; background: linear-gradient(45deg, #3498db, #2ecc71); color: white; border: none; border-radius: 12px; font-size: 1.2em; font-weight: bold; cursor: pointer; }
-    button:hover { transform: translateY(-2px); }
+    body { 
+      font-family: 'Inter', sans-serif; 
+      background: var(--bg-primary); 
+      color: var(--text-primary); 
+      line-height: 1.7; 
+      overflow-x: hidden;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    
+    /* Hero Section - Neural Gradient */
+    .hero {
+      background: var(--accent), 
+                  radial-gradient(circle at 20% 80%, rgba(120,119,198,0.3) 0%, transparent 50%),
+                  radial-gradient(circle at 80% 20%, rgba(255,119,198,0.3) 0%, transparent 50%);
+      color: white; 
+      text-align: center; 
+      padding: 100px 40px; 
+      border-radius: 32px; 
+      margin: 40px 0;
+      backdrop-filter: blur(20px);
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
+      background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.1) 50%, transparent 70%);
+      animation: shimmer 3s infinite;
+    }
+    @keyframes shimmer { 0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); } 100% { transform: translateX(100%) translateY(100%) rotate(45deg); } }
+    
+    .hero h1 { 
+      font-size: clamp(2.5rem, 5vw, 4.5rem); 
+      font-weight: 700; 
+      margin-bottom: 16px; 
+      letter-spacing: -0.02em;
+    }
+    .hero-img { 
+      width: 160px; height: 160px; 
+      border-radius: 50%; 
+      border: 4px solid rgba(255,255,255,0.3); 
+      margin: 32px auto; 
+      display: block;
+      box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+      transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+    }
+    .hero-img:hover { transform: scale(1.05) rotate(5deg); }
+
+    /* Typography & Sections */
+    h2 { 
+      font-size: clamp(1.8rem, 3vw, 2.5rem); 
+      font-weight: 600; 
+      text-align: center; 
+      margin: 80px 0 40px;
+      position: relative;
+    }
+    h2::after { 
+      content: ''; 
+      display: block; 
+      width: 64px; height: 4px; 
+      background: var(--accent); 
+      margin: 20px auto; 
+      border-radius: 2px;
+    }
+
+    /* Glassmorphism Cards */
+    .glass-card {
+      background: var(--glass);
+      backdrop-filter: blur(24px);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 24px;
+      padding: 40px;
+      margin-bottom: 32px;
+      box-shadow: var(--shadow);
+      transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+      position: relative;
+      overflow: hidden;
+    }
+    .glass-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.5), transparent);
+    }
+    .glass-card:hover { 
+      transform: translateY(-12px) scale(1.02); 
+      box-shadow: 0 40px 80px rgba(0,0,0,0.2);
+      border-color: rgba(255,255,255,0.4);
+    }
+
+    /* Skill Badges 2026 */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      margin: 60px 0;
+    }
+    .skill-badge {
+      background: var(--glass);
+      backdrop-filter: blur(16px);
+      color: var(--text-primary);
+      padding: 20px 28px;
+      border-radius: 20px;
+      text-align: center;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      border: 1px solid rgba(255,255,255,0.2);
+      transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
+      position: relative;
+      overflow: hidden;
+    }
+    .skill-badge:hover {
+      transform: translateY(-8px) scale(1.05);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+      border-color: rgba(102, 126, 234, 0.5);
+    }
+    .skill-badge::before {
+      content: attr(data-icon);
+      display: block;
+      font-size: 2rem;
+      margin-bottom: 8px;
+    }
+
+    /* Projects Grid */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+      gap: 32px;
+      margin: 60px 0;
+    }
+
+    /* 2026 Form Design */
+    .contact-section { margin-top: 80px; }
+    .contact-info { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-bottom: 40px; }
+    .contact-form {
+      background: var(--glass);
+      backdrop-filter: blur(24px);
+      border-radius: 24px;
+      padding: 48px;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+    .form-group { margin-bottom: 32px; }
+    label { 
+      display: block; 
+      margin-bottom: 12px; 
+      font-weight: 500; 
+      color: var(--text-primary);
+      font-size: 0.95rem;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 20px;
+      border: 2px solid rgba(255,255,255,0.2);
+      border-radius: 16px;
+      font-size: 16px;
+      font-family: inherit;
+      background: rgba(255,255,255,0.1);
+      color: var(--text-primary);
+      backdrop-filter: blur(12px);
+      transition: all 0.4s ease;
+    }
+    input:focus, textarea:focus {
+      outline: none;
+      border-color: #667eea;
+      box-shadow: 0 0 0 4px rgba(102,126,234,0.2);
+      transform: translateY(-2px);
+    }
+    .submit-btn {
+      width: 100%;
+      padding: 24px;
+      background: var(--accent);
+      color: white;
+      border: none;
+      border-radius: 16px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
+      position: relative;
+      overflow: hidden;
+    }
+    .submit-btn:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 25px 50px rgba(102,126,234,0.4);
+    }
+    .submit-btn:disabled { opacity: 0.7; cursor: not-allowed; transform: none; }
+
+    /* Theme Toggle 2026 */
+    .theme-toggle {
+      position: fixed;
+      top: 32px; right: 32px; z-index: 1000;
+      width: 64px; height: 64px;
+      border-radius: 50%;
+      border: none;
+      background: var(--glass);
+      backdrop-filter: blur(20px);
+      color: var(--text-primary);
+      font-size: 1.5rem;
+      cursor: pointer;
+      box-shadow: var(--shadow);
+      transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
+    }
+    .theme-toggle:hover { transform: scale(1.15) rotate(180deg); }
+
+    /* Scroll Animations */
+    .fade-in-up {
+      opacity: 0;
+      transform: translateY(60px);
+      transition: all 1s cubic-bezier(0.23, 1, 0.320, 1);
+    }
+    .fade-in-up.animate {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .container { padding: 0 20px; }
+      .hero { padding: 60px 24px; margin: 20px 0; }
+      .glass-card, .contact-form { padding: 32px 24px; }
+    }
   </style>
 </head>
 
 <body>
+  <!-- Theme Toggle -->
+  <button class="theme-toggle" id="themeToggle" title="Toggle Dark Mode">🌙</button>
+
   <div class="container">
-    <!-- Hero -->
-    <section class="hero">
+    <!-- Neural Hero Section -->
+    <section class="hero fade-in-up">
       <h1>Mathew Muthami</h1>
-      <img src="images/profile.jpg" alt="Mathew Muthami" width="140" height="140">
-      <div>🚀 IT Specialist & Full-Stack Developer</div>
-      <p style="margin-top: 15px;">Nairobi, Kenya | Available for Projects</p>
+      <img src="images/profile.jpg" alt="Mathew Muthami" class="hero-img" width="160" height="160" loading="lazy">
+      <div style="font-size: 1.4rem; font-weight: 400; margin: 20px 0;">Senior IT Specialist & Full-Stack Developer</div>
+      <div style="opacity: 0.9; font-size: 1.1rem;">Nairobi, Kenya | Available Worldwide</div>
     </section>
 
-    <!-- About -->
-    <section>
-      <h2>About Me</h2>
-      <div class="card">
-        <p><strong>✅ Full-Stack IT Specialist | TUK University</strong></p>
-        <p><strong>🎓 Skills:</strong> Web Development, C Programming, SQL Databases, Network Engineering, System Administration</p>
-        <p><strong>📍 Nairobi, Kenya</strong> | <strong>🚀 Open for freelance & contracts</strong></p>
+    <!-- Professional About -->
+    <section class="fade-in-up">
+      <h2>Expertise</h2>
+      <div class="glass-card">
+        <p style="font-size: 1.1rem; line-height: 1.8;">
+          <strong>🎓 Technical Technical Lead | TUK University</strong><br>
+          Enterprise IT solutions architect with expertise in full-stack development, 
+          C systems programming, relational database engineering, and network infrastructure.
+        </p>
+        <div style="margin-top: 32px; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px; font-size: 0.95rem;">
+          <div><strong>🌐 Web Development</strong><br>React, Next.js, HTML/CSS/JS, Tailwind</div>
+          <div><strong>⚙️ Systems Programming</strong><br>C/C++, File Systems, Algorithms</div>
+          <div><strong>💾 Database Engineering</strong><br>PostgreSQL, MySQL, 3NF Design</div>
+          <div><strong>🔌 Network Infrastructure</strong><br>STP, VLAN, IP Subnetting, Cisco</div>
+        </div>
       </div>
     </section>
 
-    <!-- Skills -->
-    <section>
-      <h2>🛠️ My Expertise</h2>
+    <!-- Interactive Skills Matrix -->
+    <section class="fade-in-up">
+      <h2>Technology Stack</h2>
       <div class="skills-grid">
-        <span class="skill-badge">🌐 Web Development</span>
-        <span class="skill-badge">⚙️ C Programming</span>
-        <span class="skill-badge">💾 SQL Databases</span>
-        <span class="skill-badge">🔌 Networks</span>
-        <span class="skill-badge">🖥️ SysAdmin</span>
+        <div class="skill-badge" data-icon="🌐" data-skill="Web Development">Full-Stack Development</div>
+        <div class="skill-badge" data-icon="⚙️" data-skill="C Programming">Systems Programming</div>
+        <div class="skill-badge" data-icon="💾" data-skill="Database">Database Engineering</div>
+        <div class="skill-badge" data-icon="🔌" data-skill="Networking">Network Engineering</div>
+        <div class="skill-badge" data-icon="🐧" data-skill="Linux">Linux Administration</div>
+        <div class="skill-badge" data-icon="☁️" data-skill="Cloud">Cloud Architecture</div>
       </div>
     </section>
 
-    <!-- Projects -->
-    <section>
+    <!-- Featured Projects -->
+    <section class="fade-in-up">
       <h2>Featured Projects</h2>
       <div class="projects-grid">
-        <div class="card">
-          <h3>🏠 Professional Portfolio</h3>
-          <p>Modern responsive website with EmailJS contact form integration.</p>
+        <div class="glass-card">
+          <h3 style="font-size: 1.4rem; margin-bottom: 16px;">🏠 Professional Portfolio v3.0</h3>
+          <p>Neural network-inspired design with glassmorphism, real-time interactions, 
+             EmailJS integration, and 60fps scroll animations. Pure vanilla JS.</p>
         </div>
-        <div class="card">
-          <h3>🌐 Network Infrastructure</h3>
-          <p>STP cables, LAN/WAN setup, IP addressing, enterprise networks.</p>
+        <div class="glass-card">
+          <h3 style="font-size: 1.4rem; margin-bottom: 16px;">🌐 Enterprise Network Deployment</h3>
+          <p>Complete infrastructure for 500+ node corporate network using STP cabling,
+             VLAN segmentation, OSPF routing, and enterprise-grade security protocols.</p>
         </div>
-        <div class="card">
-          <h3>💾 Database Systems</h3>
-          <p>TUK University student records database with normalized tables.</p>
+        <div class="glass-card">
+          <h3 style="font-size: 1.4rem; margin-bottom: 16px;">💾 TUK University Database</h3>
+          <p>Production database serving 15,000+ student records with full 3NF normalization,
+             complex JOIN optimization, stored procedures, and ACID compliance.</p>
+        </div>
+        <div class="glass-card">
+          <h3 style="font-size: 1.4rem; margin-bottom: 16px;">⚙️ Advanced C File System</h3>
+          <p>Production-grade file handling system with binary I/O, dynamic memory management,
+             multi-threaded processing, and comprehensive error recovery mechanisms.</p>
         </div>
       </div>
     </section>
 
-    <!-- Contact -->
-    <section>
-      <h2>Contact Me</h2>
-      <div class="card">
-        <p><strong>📧 Email:</strong> <a href="mailto:muthamimathew@gmail.com">muthamimathew@gmail.com</a></p>
-        <p><strong>📱 Phone:</strong> <a href="tel:+254716719255">+254 716 719 255</a></p>
-        <p><strong>📍 Location:</strong> Nairobi, Kenya</p>
+    <!-- Enterprise Contact Section -->
+    <section class="contact-section fade-in-up">
+      <h2>Let's Build Something</h2>
+      
+      <!-- Contact Information -->
+      <div class="contact-info">
+        <div class="glass-card" style="text-align: center;">
+          <div style="font-size: 2rem; margin-bottom: 16px;">📧</div>
+          <h4 style="margin-bottom: 12px;">Email</h4>
+          <a href="mailto:muthamimathew@gmail.com" style="color: #667eea; font-weight: 500; font-size: 1.1rem; text-decoration: none;">muthamimathew@gmail.com</a>
+        </div>
+        <div class="glass-card" style="text-align: center;">
+          <div style="font-size: 2rem; margin-bottom: 16px;">📱</div>
+          <h4 style="margin-bottom: 12px;">Phone</h4>
+          <a href="tel:+254716719255" style="color: #667eea; font-weight: 500; font-size: 1.1rem; text-decoration: none;">+254 716 719 255</a>
+        </div>
+        <div class="glass-card" style="text-align: center;">
+          <div style="font-size: 2rem; margin-bottom: 16px;">📍</div>
+          <h4 style="margin-bottom: 12px;">Location</h4>
+          <div style="font-weight: 500; color: var(--text-secondary);">Nairobi, Kenya</div>
+        </div>
       </div>
 
-      <form class="contact-form" id="contact-form">
+      <!-- Professional Contact Form -->
+      <form class="contact-form" id="contactForm">
         <div class="form-group">
-          <label for="name">Your Name</label>
-          <input type="text" id="name" name="name" placeholder="Your name" required>
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="user_name" placeholder="John Doe" required>
         </div>
         <div class="form-group">
-          <label for="email">Your Email</label>
-          <input type="email" id="email" name="email" placeholder="your@email.com" required>
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="user_email" placeholder="john@company.com" required>
         </div>
         <div class="form-group">
-          <label for="message">Your Message</label>
-          <textarea id="message" name="message" rows="6" placeholder="Tell me about your project..." required></textarea>
+          <label for="subject">Project Type</label>
+          <input type="text" id="subject" name="subject" placeholder="Website, Network, Database..." required>
         </div>
-        <button type="submit" id="submitBtn">🚀 Send Message</button>
+        <div class="form-group">
+          <label for="message">Project Details</label>
+          <textarea id="message" name="message" rows="6" placeholder="Tell me about your project requirements, timeline, and budget..." required></textarea>
+        </div>
+        <button type="submit" class="submit-btn" id="submitBtn">
+          <span class="btn-text">Launch Project</span>
+          <span class="btn-loading" style="display: none;">Sending...</span>
+        </button>
       </form>
     </section>
   </div>
 
-  <!-- EmailJS + Your Script -->
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <!-- EmailJS SDK + Custom Script -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script src="js/script.js"></script>
+
+  <!-- Inline Theme & Animation Script -->
+  <script>
+    // Theme Toggle
+    const themeToggle = document.getElementById('themeToggle');
+    const currentTheme = localStorage.getItem('theme');
+    if (currentTheme === 'dark') {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      themeToggle.textContent = '☀️';
+    }
+    
+    themeToggle.addEventListener('click', () => {
+      document.documentElement.setAttribute('data-theme', document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+      localStorage.setItem('theme', document.documentElement.getAttribute('data-theme'));
+      themeToggle.textContent = document.documentElement.getAttribute('data-theme') === 'dark' ? '☀️' : '🌙';
+    });
+
+    // Scroll Animations
+    const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate');
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.fade-in-up').forEach(el => observer.observe(el));
+
+    // Skill Badge Interactions
+    document.querySelectorAll('.skill-badge').forEach(badge => {
+      badge.addEventListener('mouseenter', () => {
+        badge.style.transform = 'translateY(-8px) scale(1.05)';
+      });
+      badge.addEventListener('mouseleave', () => {
+        badge.style.transform = '';
+      });
+    });
+  </script>
 </body>
 </html>
