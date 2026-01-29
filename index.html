@@ -5,54 +5,92 @@
   <title>Mathew Muthami | IT Specialist</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/style.css">
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
+    h1 { color: #2c3e50; text-align: center; }
+    h2 { color: #34495e; border-bottom: 2px solid #3498db; padding-bottom: 10px; }
+    .card { background:#f4f4f8; padding:20px; border-radius:10px; margin-bottom:20px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+    .projects { display: flex; flex-wrap: wrap; gap: 20px; }
+    .project-card { background: #e8f0fe; padding: 15px; border-radius: 10px; flex: 1; min-width: 280px; }
+    form { background: #f8f9fa; padding: 20px; border-radius: 10px; }
+    input, textarea, button { width: 100%; padding: 10px; margin: 5px 0; border: 1px solid #ddd; border-radius: 5px; box-sizing: border-box; }
+    button { background: #3498db; color: white; border: none; cursor: pointer; font-weight: bold; }
+    button:hover { background: #2980b9; }
+  </style>
 </head>
 
 <body>
   <!-- Header Section -->
   <h1>Mathew Muthami</h1>
-  <img src="images/profile.jpg" alt="Mathew Muthami" width="150">
-  <p><strong>IT Specialist & Web Developer</strong></p>
+  <img src="images/profile.jpg" alt="Mathew Muthami" width="150" style="display:block; margin:0 auto; border-radius:50%;">
+  <p style="text-align:center; font-size:1.2em;"><strong>IT Specialist & Web Developer</strong></p>
 
-  <!-- About Me -->
+  <!-- Professional About Me -->
   <h2>About Me</h2>
-  <p>
-    I am an IT specialist with experience in web development,
-    networking, system support, and database management.
-  </p>
+  <div class="card">
+    <p><strong>✅ Full-Stack IT Specialist | TUK University</strong></p>
+    <p><strong>🎓 Core Skills:</strong> Web Development (HTML/CSS/JS), C Programming, Database Management (SQL), Network Configuration (STP Cables), System Administration</p>
+    <p><strong>💼 Experience:</strong> Building responsive websites, debugging complex C programs with file handling & loops, designing optimized database structures for academic records, configuring enterprise networks with shielded twisted pair cables</p>
+    <p><strong>📍 Nairobi, Kenya</strong> | <strong>🚀 Open for freelance projects, internships & full-time roles</strong></p>
+  </div>
 
   <!-- Services -->
   <h2>Services</h2>
-  <ul>
-    <li>Web Development</li>
-    <li>IT Support</li>
-    <li>Network Configuration</li>
-    <li>System Maintenance</li>
-  </ul>
+  <div class="card">
+    <ul style="line-height:1.8;">
+      <li><strong>Web Development</strong> - HTML5, CSS3, JavaScript, Responsive Design</li>
+      <li><strong>IT Support</strong> - System troubleshooting, software installation, user training</li>
+      <li><strong>Network Configuration</strong> - STP cables, LAN/WAN setup, IP addressing</li>
+      <li><strong>System Maintenance</strong> - Server management, backups, security updates</li>
+      <li><strong>Database Management</strong> - SQL design, optimization, student record systems</li>
+    </ul>
+  </div>
+
+  <!-- Featured Projects -->
+  <h2>Featured Projects</h2>
+  <div class="projects">
+    <div class="project-card">
+      <h3>🏠 Professional Portfolio</h3>
+      <p>Modern responsive website built with HTML5, CSS3, and vanilla JavaScript. Features real-time form validation and professional UI/UX design.</p>
+    </div>
+    <div class="project-card">
+      <h3>🌐 Network Infrastructure</h3>
+      <p>Enterprise network configuration using Shielded Twisted Pair (STP) cables, IP subnetting, VLAN setup, and network troubleshooting.</p>
+    </div>
+    <div class="project-card">
+      <h3>💾 Database Systems</h3>
+      <p>Relational database design for TUK University student records with normalized tables, efficient queries, and data integrity constraints.</p>
+    </div>
+    <div class="project-card">
+      <h3>⚙️ C Programming Projects</h3>
+      <p>File handling systems, loop structures, and algorithm implementation for academic and real-world applications.</p>
+    </div>
+  </div>
 
   <!-- Contact Info -->
   <h2>Contact Me</h2>
-  <div style="background:#f4f4f8; padding:20px; border-radius:10px;">
+  <div class="card">
     <p><strong>Name:</strong> Mathew Muthami</p>
-    <p><strong>Email:</strong> <a href="mailto:muthamimathew@gmail.com">muthamimathew@gmail.com</a></p>
-    <p><strong>Phone:</strong> +254 716 719 255</p>
+    <p><strong>Email:</strong> <a href="mailto:muthamimathew@gmail.com" style="color:#3498db;">muthamimathew@gmail.com</a></p>
+    <p><strong>Phone:</strong> <a href="tel:+254716719255" style="color:#3498db;">+254 716 719 255</a></p>
     <p><strong>Location:</strong> Nairobi, Kenya</p>
   </div>
 
   <!-- Contact Form -->
   <form style="margin-top:20px;">
     <label>Name:</label><br>
-    <input type="text" id="name" placeholder="Mathew Muthami" required><br><br>
+    <input type="text" id="name" placeholder="Your Name" required><br><br>
 
     <label>Email:</label><br>
-    <input type="email" id="email" placeholder="muthamimathew@gmail.com" required><br><br>
+    <input type="email" id="email" placeholder="your@email.com" required><br><br>
 
     <label>Message:</label><br>
-    <textarea id="message" required></textarea><br><br>
+    <textarea id="message" rows="5" placeholder="Tell me about your project..." required></textarea><br><br>
 
     <button type="submit" id="submitBtn">Send Message</button>
   </form>
 
-  <!-- Updated JavaScript -->
+  <!-- JavaScript -->
   <script src="js/script.js"></script>
 </body>
 </html>
