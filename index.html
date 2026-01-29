@@ -1,39 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-<link rel="stylesheet" href="css/style.css">
-    <meta charset="UTF-8">
-    <title>Mathew Muthami | IT Specialist</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="css/style.css">
+<head>
+  <meta charset="UTF-8">
+  <title>Mathew Muthami | IT Specialist</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
 <body>
+  <!-- Header Section -->
+  <h1>Mathew Muthami</h1>
+  <img src="images/profile.jpg" alt="Mathew Muthami" width="150">
+  <p><strong>IT Specialist & Web Developer</strong></p>
 
-    <h1>Mathew Muthami</h1><img src="images/profile.jpg" alt="Mathew Muthami" style="width: 150px; height: 150px; border-radius: 50%;">
-    <p><strong>IT Specialist & Web Developer</strong></p>
+  <!-- About Me -->
+  <h2>About Me</h2>
+  <p>
+    I am an IT specialist with experience in web development,
+    networking, system support, and database management.
+  </p>
 
-    <h2>About Me</h2>
-    <p>
-        I am an IT specialist with experience in web development,
-        networking, system support, and database management.
-    </p>
+  <!-- Services -->
+  <h2>Services</h2>
+  <ul>
+    <li>Web Development</li>
+    <li>IT Support</li>
+    <li>Network Configuration</li>
+    <li>System Maintenance</li>
+  </ul>
 
-    <h2>Services</h2>
-    <ul>
-        <li>Web Development</li>
-        <li>IT Support</li>
-        <li>Network Configuration</li>
-        <li>System Maintenance</li>
-    </ul>
+  <!-- Contact Info -->
+  <h2>Contact Me</h2>
+  <div style="background:#f4f4f8; padding:20px; border-radius:10px;">
+    <p><strong>Name:</strong> Mathew Muthami</p>
+    <p><strong>Email:</strong> <a href="mailto:muthamimathew@gmail.com">muthamimathew@gmail.com</a></p>
+    <p><strong>Phone:</strong> +254 716 719 255</p>
+    <p><strong>Location:</strong> Nairobi, Kenya</p>
+  </div>
 
-    <h2>📧 Contact Me</h2>
-<div style="background: #e8f4f8; padding: 20px; border-radius: 10px; border-left: 4px solid #3498db;">
-    <p><strong>📧 Email:</strong> mathewmuthami@gmail.com</p>
-    <p><strong>📱 Phone:</strong> +254 716719255</p>
-    <p><strong>📍 Location:</strong> Nairobi, Kenya</p>
-    
-    <form style="margin-top: 20px;">
-        <input type="text" placeholder="Your Name" style="width: 100%; padding: 10px; margin: 5px 0; border: 1px solid #3498db; border-radius: 5px;">
-        <input type="email" placeholder="Your Email" style="width: 100%; padding: 10px; margin: 5px 0; border: 1px solid #3498db; border-radius: 5px;">
-        <textarea placeholder="Your Message" rows="4" style="width: 100%; padding: 10px; margin: 5px 0; border: 1px solid #3498db; border-radius: 5px;"></textarea>
-        <button type="submit" style="background: #3498db; color: white; padding: 12px 24px; border: none; border-radius: 5px; cursor: pointer; font-size: 16px;">Send Message</button>
-    </form>
-</div>
+  <!-- Contact Form -->
+  <form style="margin-top:20px;">
+    <label>Name:</label><br>
+    <input type="text" id="name" placeholder="Mathew Muthami" required><br><br>
+
+    <label>Email:</label><br>
+    <input type="email" id="email" placeholder="muthamimathew@gmail.com" required><br><br>
+
+    <label>Message:</label><br>
+    <textarea id="message" required></textarea><br><br>
+
+    <button type="submit" id="submitBtn">Send Message</button>
+  </form>
+
+  <!-- Updated JavaScript -->
+  <script src="js/script.js"></script>
+</body>
+</html>
